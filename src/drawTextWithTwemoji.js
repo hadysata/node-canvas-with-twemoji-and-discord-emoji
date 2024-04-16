@@ -53,7 +53,7 @@ module.exports = async function drawTextWithEmoji(
   for (let i = 0; i < textEntities.length; i++) {
     const entity = textEntities[i];
 
-    console.log(entity);
+    console.log(entity.src);
 
     // Emoji case
     const emoji = await loadTwemojiImageByUrl(entity.src);
