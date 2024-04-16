@@ -30,8 +30,5 @@ module.exports = function splitEntitiesFromText(text) {
 
   console.log(twemojiEntities);
 
-
-  textEntities.push(twemojiEntities.src);
-
-  return parseDiscordEmojis(textEntities);
+  return parseDiscordEmojis([twemojiEntities.src]);
 }
