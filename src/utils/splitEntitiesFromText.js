@@ -26,26 +26,12 @@ function parseDiscordEmojis(textEntities) {
 }
 
 module.exports = function splitEntitiesFromText(text) {
-  const twemojiEntities = parse(text, { folder: 'svg', ext: ".svg" });
+  const twemojiEntities = parse(text, { ext: ".png", base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/' });
 
   console.log(twemojiEntities);
 
-  let unparsedText = text;
-  let lastTwemojiIndice = 0;
-  const textEntities = [];
 
-  twemojiEntities.forEach((twemoji) => {
-    textEntities.push(
-      unparsedText.slice(0, twemoji.indices[0] - lastTwemojiIndice)
-    );
-
-    textEntities.push(twemoji);
-
-    unparsedText = unparsedText.slice(twemoji.indices[1] - lastTwemojiIndice);
-    lastTwemojiIndice = twemoji.indices[1];
-  });
-
-  textEntities.push(unparsedText);
+  textEntities.push(twemojiEntities.src);
 
   return parseDiscordEmojis(textEntities);
 }
