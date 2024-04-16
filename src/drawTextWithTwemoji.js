@@ -59,6 +59,8 @@ module.exports = async function drawTextWithEmoji(
     // Emoji case
     const emoji = await loadTwemojiImageByUrl(entity.match(/src="([^"]*)"/)[1]);
 
+    console.log(emoji);
+
     context.drawImage(
       emoji,
       textLeftMargin + x + currentWidth + emojiSideMargin,
