@@ -50,6 +50,9 @@ module.exports = async function drawTextWithEmoji (
 
   for (let i = 0; i < textEntities.length; i++) {
     const entity = textEntities[i];
+    
+    print(typeof entity);
+
     if (typeof entity === 'string') {
       // Common text case
       if (fillType === 'fill') {
