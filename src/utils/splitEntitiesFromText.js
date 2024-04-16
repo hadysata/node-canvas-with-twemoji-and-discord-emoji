@@ -1,4 +1,4 @@
-const { parse } = require('twemoji-parser');
+const { parse } = require('twemoji');
 
 /*
  * Split Text
@@ -26,7 +26,7 @@ function parseDiscordEmojis(textEntities) {
 }
 
 module.exports = function splitEntitiesFromText(text) {
-  const twemojiEntities = parse(text, { assetType: "png" });
+  const twemojiEntities = parse(text, { folder: 'png', ext: ".png" });
 
   let unparsedText = text;
   let lastTwemojiIndice = 0;
