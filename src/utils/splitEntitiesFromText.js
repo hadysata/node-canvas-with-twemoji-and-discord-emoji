@@ -28,6 +28,8 @@ function parseDiscordEmojis(textEntities) {
 module.exports = function splitEntitiesFromText(text) {
   const twemojiEntities = parse(text, { folder: 'png', ext: ".png" });
 
+  console.log(twemojiEntities);
+
   let unparsedText = text;
   let lastTwemojiIndice = 0;
   const textEntities = [];
